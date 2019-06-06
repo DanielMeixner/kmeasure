@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
-metadata:
-  name: kmeasure
+metadata:  
+  generateName: kmeasure
 spec:
   template: 
     spec:
@@ -13,7 +13,7 @@ spec:
             - name: "MEASURE_NAMESPACE"
               value: "default"
             - name: "MEASURE_PODNAME"
-              value: "anycode-7dff646747-vz5xj"
+              value: "nginx-64f497f8fd-w54hz"
             - name: "MEASURE_INTERVAL"
               value: "5000"
             - name: "MEASURE_TIME"
