@@ -1,0 +1,20 @@
+apiVersion: "v1"
+kind: Pod
+metadata:
+  name: kmeasure
+  labels:
+    name: kmeasure    
+spec:
+  containers:
+    - name: calcbackend
+      image: danielmeixner/kmeasure:latest      
+      env: 
+        - name: "MEASURE_NAMESPACE"
+          value: "default"
+        - name: "MEASURE_PODNAME"
+          value: "anycode-7dff646747-vz5xj"
+        - name: "MEASURE_INTERVAL"
+          value: "5000"
+        - name: "MEASURE_TIME"
+          value: "60"
+            
