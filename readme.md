@@ -18,7 +18,7 @@ kubectl logs kmeter-sb7gv
 ```
 You'll get something like this:
 ```
-{"countprimes":{"averageMemory":13612,"averageCpu":0},"namespace":"default","podName":"compute-svc-sfs-2","averageCpu":0  Normal  Started    34s   kubelet, aks-agentpool-35562525-3  Started container,"averageMemory":13612,"meterTime":62,"meterFinishedTime":1559900366451}  
+{"memory-demo-ctr":{"averageMemory":154960,"averageCpu":37},"nginx":{"averageMemory":3596,"averageCpu":0},"namespace":"default","podName":"memory-demo","averageCpu":37,"averageMemory":158556,"meterTime":30,"meterFinishedTime":1559905832909} 
 ```
 
 # where the heck is this container?

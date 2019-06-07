@@ -1,9 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:  
-  generateName: kmeter-
-  labels:
-    aadpodidbinding: "kmeter"
+  generateName: kmeter-  
 spec:
   template: 
     metadata:
@@ -18,9 +16,9 @@ spec:
             - name: "KMETER_NAMESPACE"
               value: "default"
             - name: "KMETER_PODNAME"
-              value: "compute-svc-sfs-2"
+              value: "memory-demo"
             - name: "KMETER_DEBUG"
-              value: "false"
+              value: "true"
             - name: "KMETER_INTERVAL"
               value: "5000"
             - name: "KMETER_TIME"
