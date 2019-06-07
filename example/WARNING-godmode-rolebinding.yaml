@@ -1,0 +1,29 @@
+# Warning
+# This file give access to metrics api to all servcies runnign as system:serviceaccounts
+# Therefore its's commented out.
+# You can use this kind of roles for RBAC enabled clusters.
+
+
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRole
+# metadata:
+#   namespace: default
+#   name: godmode
+# rules:
+#   - apiGroups: ["metrics.k8s.io"]
+#     resources: ["pods"]
+#     verbs: ["get", "list", "watch"]
+# ---
+
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRoleBinding
+# metadata:
+#   name: godmode
+# subjects:
+# - kind: Group
+#   name: system:serviceaccounts
+#   apiGroup: rbac.authorization.k8s.io
+# roleRef:
+#   kind: ClusterRole
+#   name: godmode
+#   apiGroup: rbac.authorization.k8s.io

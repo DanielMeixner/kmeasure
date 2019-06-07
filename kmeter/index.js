@@ -8,7 +8,10 @@ const opts = {};
 kc.applyToRequest(opts);
 
 var ns = process.env.METER_NAMESPACE;
-var debug = process.env.METER_DEBUG | false;
+var debugstr = process.env.METER_DEBUG | "false";
+var debug=false;
+if(debugstr=="true") {debug=true};
+
 var podname = process.env.METER_PODNAME;
 var interval = process.env.METER_INTERVAL | 3000;
 var timeInSeconds = process.env.METER_TIME | 30;

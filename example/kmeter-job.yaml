@@ -2,22 +2,27 @@ apiVersion: batch/v1
 kind: Job
 metadata:  
   generateName: kmeter-
+  labels:
+    aadpodidbinding: "kmeter"
 spec:
   template: 
+    metadata:
+      labels: 
+        aadpodidbinding: "kmeter"
     spec:
       restartPolicy: "Never"
       containers:
         - name: kmeter
           image: danielmeixner/kmeter:latest      
           env: 
-            - name: "METER_NAMESPACE"
+            - name: "KMETER_NAMESPACE"
               value: "default"
-            - name: "METER_PODNAME"
-              value: "nginx-dbddb74b8-zzpn4"
-            - name: "METER_DEBUG"
+            - name: "KMETER_PODNAME"
+              value: "compute-svc-sfs-2"
+            - name: "KMETER_DEBUG"
               value: "false"
-            - name: "METER_INTERVAL"
+            - name: "KMETER_INTERVAL"
               value: "5000"
-            - name: "METER_TIME"
+            - name: "KMETER_TIME"
               value: "30"
             
