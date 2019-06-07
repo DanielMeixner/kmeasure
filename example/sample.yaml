@@ -1,21 +1,23 @@
 apiVersion: batch/v1
 kind: Job
 metadata:  
-  generateName: kmeasure
+  generateName: kmeter-
 spec:
   template: 
     spec:
       restartPolicy: "Never"
       containers:
-        - name: calcbackend
-          image: danielmeixner/kmeasure:latest      
+        - name: kmeter
+          image: danielmeixner/kmeter:latest      
           env: 
-            - name: "MEASURE_NAMESPACE"
+            - name: "METER_NAMESPACE"
               value: "default"
-            - name: "MEASURE_PODNAME"
-              value: "nginx-64f497f8fd-w54hz"
-            - name: "MEASURE_INTERVAL"
+            - name: "METER_PODNAME"
+              value: "nginx-dbddb74b8-zzpn4"
+            - name: "METER_DEBUG"
+              value: "false"
+            - name: "METER_INTERVAL"
               value: "5000"
-            - name: "MEASURE_TIME"
-              value: "60"
+            - name: "METER_TIME"
+              value: "30"
             
